@@ -1,7 +1,7 @@
 // Sum of Two Numbers
 function sum(a, b) {
   if (typeof a !== "number" || typeof b !== "number") {
-    console.log("Los datos no son correctos");
+    console.log("Incorrect");
     return;
   }
   return a + b;
@@ -10,7 +10,7 @@ function sum(a, b) {
 // Factorial of a Number
 function factorial(n) {
   if (typeof n !== "number" || n < 0 || !Number.isInteger(n)) {
-    console.log("Los datos no son correctos");
+    console.log("Incorrect");
     return;
   }
   let result = 1;
@@ -22,8 +22,12 @@ function factorial(n) {
 
 // Find the Largest Number
 function findLargest(arr) {
-  if (!Array.isArray(arr) || arr.length === 0 || !arr.every(x => typeof x === "number")) {
-    console.log("Los datos no son correctos");
+if (
+    !Array.isArray(arr) ||
+    arr.length === 0 ||
+    !arr.every((x) => typeof x === "number")
+  ) {
+    console.log("Incorrect");
     return;
   }
   return Math.max(...arr);
@@ -32,17 +36,14 @@ function findLargest(arr) {
 // Count Vowels in a String
 function countVowels(str) {
   if (typeof str !== "string") {
-    console.log("Los datos no son correctos");
+    console.log("Incorrect");
     return;
   }
-
-  // Normalizamos tildes (ej: "á" → "a")
-  let normalized = str.normalize("NFD").replace(/\p{Diacritic}/gu, "");
-
-  let vowels = "aeiouAEIOU";
+  const normalized = str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  const vowels = "aeiouAEIOU";
   let count = 0;
 
-  for (let char of normalized) {
+  for (const char of normalized) {
     if (vowels.includes(char)) {
       count++;
     }
@@ -53,7 +54,7 @@ function countVowels(str) {
 // Check if a Number is Prime
 function isPrime(n) {
   if (typeof n !== "number" || !Number.isInteger(n)) {
-    console.log("Los datos no son correctos");
+    console.log("Incorrect");
     return;
   }
 
