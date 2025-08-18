@@ -1,7 +1,7 @@
 // Sum of Two Numbers
 function sum(a, b) {
   if (typeof a !== "number" || typeof b !== "number") {
-    console.log("Incorrect");
+    console.log("Los datos de entrada no son adecuados");
     return;
   }
   return a + b;
@@ -10,7 +10,7 @@ function sum(a, b) {
 // Factorial of a Number
 function factorial(n) {
   if (typeof n !== "number" || n < 0 || !Number.isInteger(n)) {
-    console.log("Incorrect");
+    console.log("Los datos de entrada no son adecuados");
     return;
   }
   let result = 1;
@@ -27,7 +27,7 @@ if (
     arr.length === 0 ||
     !arr.every((x) => typeof x === "number")
   ) {
-    console.log("Incorrect");
+    console.log("Los datos de entrada no son adecuados");
     return;
   }
   return Math.max(...arr);
@@ -36,7 +36,7 @@ if (
 // Count Vowels in a String
 function countVowels(str) {
   if (typeof str !== "string") {
-    console.log("Incorrect");
+    console.log("Los datos de entrada no son adecuados");
     return;
   }
   const normalized = str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
@@ -54,7 +54,7 @@ function countVowels(str) {
 // Check if a Number is Prime
 function isPrime(n) {
   if (typeof n !== "number" || !Number.isInteger(n)) {
-    console.log("Incorrect");
+    console.log("Los datos de entrada no son adecuados");
     return;
   }
 
